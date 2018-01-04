@@ -1,7 +1,7 @@
 This code implement sequence to sequence fingerprint The Zinc dataset can be used.
 
 Installation requirements
-  1.We right now depend on the tensorflow-gpu==0.12.0. There are huge changes in tensorflow 1.0.1 and we yet have not resource to support it.
+  1.We right now depend on the tensorflow-gpu==1.4.1. #fix me.
   2.smile is required(for Ubuntu OS, pip install smile)
 
 References:
@@ -23,7 +23,7 @@ Running workflow:
 
 1. Prepare data
 
- Build vocabulary
+a) Build vocabulary
 
  Use the build_vocab switch to turn on building vocabulary functionality.
 
@@ -43,7 +43,7 @@ Tokenizing data in /tmp/tmpcYVqV0
   tokenizing line 200000
   tokenizing line 300000
 
-  if vocabulary already exsits
+b) If vocabulary already exsits
   Translate the SMI file using existing vocabulary
   Switch off build_vocab option, or simply hide it from the command line.
 
