@@ -1,7 +1,7 @@
 This code implement sequence to sequence fingerprint The Zinc dataset can be used.
 
 Installation requirements
-  1.We right now depend on the tensorflow-gpu==1.4.1. #fix me.
+  1.We right now depend on the tensorflow==1.4.1/tensorflow-gpu==1.3.0. #fix me.
   2.smile is required(for Ubuntu OS, pip install smile)
 
 References:
@@ -70,8 +70,9 @@ global step 145800 learning rate 0.1200 step-time 0.265477 perplexity 1.001033
   eval: bucket 1 perplexity 1.001052
   eval: bucket 2 perplexity 1.000259
   eval: bucket 3 perplexity 1.001401
-From fresh
 
+From fresh
+(Note: run step 1 again and generate new weights e.g.:put them in unsup-seq2seq/models/gru-2-128)
 python train.py train ~/expr/unsup-seq2seq/models/gru-2-128/ ~/expr/unsup-seq2seq/data/pm2.tokens ~/expr/unsup-seq2seq/data/logp.tokens --batch_size 256
 python train.py train ~/expr/unsup-seq2seq/models/gru-3-128/ ~/expr/unsup-seq2seq/data/pm2.tokens ~/expr/unsup-seq2seq/data/logp.tokens --batch_size 256
 python train.py train ~/expr/unsup-seq2seq/models/gru-2-256/ ~/expr/unsup-seq2seq/data/pm2.tokens ~/expr/unsup-seq2seq/data/logp.tokens --batch_size 256 --summary_dir ~/expr/unsup-seq2seq/models/gru-2-256/summary/
