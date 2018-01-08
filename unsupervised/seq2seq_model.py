@@ -329,12 +329,12 @@ class Seq2SeqModel(object): # pylint: disable=too-many-instance-attributes
             outputs, summary = session.run([output_feed, self.summary_ops[bucket_id]], input_feed)
             return outputs[1], outputs[2], summary  # Gradient norm, loss, no outputs.
         outputs = session.run(output_feed, input_feed)
-        if  output_encoder_states:
+        if output_encoder_states:
+
             # No gradient norm, loss, outputs, encoder fixed vector.
             return None, outputs[0], outputs[1:1+decoder_size], outputs[1+decoder_size:]
         # No gradient norm, loss, outputs.
         return None, outputs[0], outputs[1:1+decoder_size]
-
 
     def get_batch(self, data, bucket_id): # pylint: disable=too-many-locals
         """Get a random batch of data from the specified bucket, prepare for step.
